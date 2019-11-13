@@ -1,0 +1,100 @@
+body {
+  margin: 0px;
+  font-family: 'Muli', sans-serif;  
+}
+  
+.header {
+  height: 100px;
+  /* border: 2px solid black;   */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+}
+  
+.header__logo img {
+  width: 50px;
+}
+
+.selling {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  border-radius: 30px;
+}
+
+.selling h3 {
+  margin: 0;  
+}
+  
+.selling__notifications {
+  display: flex;
+  flex-direction: row;
+}
+  
+.selling__notifications p {
+  border-bottom: 2px solid grey;
+  padding: 0px 50px;
+}
+  
+.border {
+  border-right: 2px solid grey;
+}
+  
+.selling__ticket {
+  background-color: #2196F3;  
+  border: 2px solid black;
+  border-radius: 30px;
+  width: 300px;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+}
+  
+.selling__ticket--data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin:  0px;
+  height: 40px;
+}
+  
+.selling__ticket--info {
+  background-color: white;
+  margin: 0;
+  padding: 0 10px;
+}
+  
+.ticket__data--details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;  
+  height: 50px;
+  align-items: center;
+}
+  
+.selling__ticket--price {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  font-size: 25px;
+}
+  
+.selling__ticket--price p {
+  margin: 15px 0;  
+}
+  
+.selling__ticket--Button {
+  width: 80%;
+  height: 30px;
+  margin: 0px 20px 20px 20px;
+  background-color: #120390;
+  border-radius: 4px;
+  border: 1px solid #120390 ;
+  color: white;
+}
+  
+.selling__ticket--Button:hover {
+  cursor: pointer;
+}

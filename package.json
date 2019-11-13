@@ -1,0 +1,47 @@
+{
+  "name": "EasyTicket",
+  "version": "1.0.0",
+  "description": "EasyTicket es una plataforma social de compra y venta de tíquets aéreos. Una plataforma pensada para facilitarle la vida al cliente y sacarlo de apuros. Los Usuarios podrán ver las diferentes rutas disponibles (origen y destino) para comprar tíquets aéreos de bajo costo y/o vender tíquets comprados que ya no quiere usar. Es plataforma que notifica en tiempo real el estado de un vuelo, si fue cancelado, si fue modificado, si estás a 2 horas de viajar. Con EasyTicket podrás realizar el CheckIn mediante código QR.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --open --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuisParraPulido/EasyTicket.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LuisParraPulido/EasyTicket/issues"
+  },
+  "homepage": "https://github.com/LuisParraPulido/EasyTicket#readme",
+  "dependencies": {
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/preset-react": "^7.7.0",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.16.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  }
+}
