@@ -1,14 +1,17 @@
 import React from 'react';
 import '../assets/styles/components/Header.scss';
 
+import logo from '../assets/static/icono-home.png';
+import userIcon from '../assets/static/icono-usuario.png';
+
 const Header = () => (
   <header className='header'>
     <div className='header__icons'>
-      <img className='header__icons--img' src='../assets/img/icono-home.png' alt='plazi-video-logo' />
+      <img className='header__icons--img' src={logo} alt='plazi-video-logo' />
       <h1>EasyTicket</h1>
       <div className='header__icons--menu'>
         <div className='header__menu--profile'>
-          <img src='../assets/img/icono-usuario.png' alt='' />
+          <img src={userIcon} alt='' />
           <p>Perfil</p>
         </div>
         <div>
