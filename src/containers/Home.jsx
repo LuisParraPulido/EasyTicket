@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Search from '../components/Search';
 
 const Home = () => (
@@ -7,4 +8,4 @@ const Home = () => (
   </>
 );
 
-export default Home;
+export default connect(null, null)(Home);

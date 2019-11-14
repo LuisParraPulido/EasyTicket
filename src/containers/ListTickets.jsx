@@ -1,21 +1,22 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import ListItems from '../components/ListItems';
 import TicketItem from '../components/TicketItem';
-import useInitalState from '../hooks/useInitialState';
 
-const API = 'http://localhost:3000/initialState';
-
-const ListTickets = () => {
-  const initialState = useInitalState(API);
+const ListTickets = ({ tickets }) => {
   return (
     <>
-      {initialState.tickets !== undefined && (
-        <ListItems>
-          {initialState.tickets.map((item) => <TicketItem key={item.id} {...item} />)}
-        </ListItems>
-      )}
+      <ListItems>
+        {tickets.map((item) => <TicketItem key={item.id} {...item} />)}
+      </ListItems>
     </>
   );
 };
 
-export default ListTickets;
+const mapStateToProps = (state) => {
+  return {
+    tickets: state.tickets,
+  };
+};
+
+export default connect(mapStateToProps, null)(ListTickets);
