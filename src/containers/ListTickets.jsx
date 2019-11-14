@@ -1,17 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import ListItems from '../components/ListItems';
 import TicketItem from '../components/TicketItem';
+import useInitalState from '../hooks/useInitialState';
 
-const ListTickets = () => (
-  <>
-    <Header />
+const API = 'http://localhost:3000/initialState';
 
-    <ListItems>
-      <TicketItem />
-      <TicketItem />
-    </ListItems>
-  </>
-);
+const ListTickets = () => {
+  const initialState = useInitalState(API);
+  return (
+    <>
+      <Header />
+      {initialState.tickets !== undefined && (
+        <ListItems>
+          {initialState.tickets.map((item) => <TicketItem key={item.id} {...item} />)}
+        </ListItems>
+      )}
+    </>
+  );
+};
 
 export default ListTickets;

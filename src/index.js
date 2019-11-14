@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './routes/App';
+// import App from './routes/App';
+import ListTickets from './containers/ListTickets';
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<ListTickets />, document.getElementById('app'));
