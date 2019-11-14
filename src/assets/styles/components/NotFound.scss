@@ -1,0 +1,43 @@
+
+.error404 {
+    
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0px 30px;
+  min-height: calc(100vh - 200px);
+}
+
+.error404 h1 {
+  color: black;
+  text-align: center;
+  font-size: 40px;
+  -webkit-animation: beat 2s infinite alternate;
+-moz-animation: beat 2s infinite alternate;
+-ms-animation: beat 2s infinite alternate;
+-o-animation: beat 2s infinite alternate;
+animation: beat 2s infinite alternate;
+
+-webkit-transform-origin: center;
+-moz-transform-origin: center;
+-o-transform-origin: center;
+-ms-transform-origin: center;
+transform-origin: center;
+}
+h2 {
+  color: black;
+  font-size: 16px;
+  text-align: center;
+}
+
+@keyframes beat {
+  to {
+     -webkit-transform: scale(2);
+        -moz-transform: scale(2);
+        -o-transform: scale(2);
+        -ms-transform: scale(2);
+        transform: scale(2);
+  }
+} 
