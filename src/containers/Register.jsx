@@ -1,34 +1,79 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { registerResquest } from '../actions';
 
 import '../assets/styles/components/Register.scss';
 import goolgeIcon from '../assets/static/google-icon.png';
 import facebookIcon from '../assets/static/facebook-icon.png';
 import twitterIcon from '../assets/static/twitter-icon.png';
 
-const Regiter = () => (
-  <section className='register'>
-    <section className='register__container'>
-      <h2>Regístrate</h2>
-      <form className='register__container--form'>
-        <input className='input' type='text' placeholder='Nombre' />
-        <input className='input' type='text' placeholder='Correo' />
-        <input className='input' type='password' placeholder='Contraseña' />
-        <button className='button' type='button'>Registrarme</button>
-      </form>
-      <section className='register__container--social-media'>
-        <p>Registrate con</p>
-        <div>
-          <img src={facebookIcon} />
-          <img src={twitterIcon} />
-          <img src={goolgeIcon} />
-        </div>
-      </section>
-      <Link to='/login'>
-      Iniciar sesión
-      </Link>
-    </section>
-  </section>
-);
+const Regiter = (props) => {
+  const [form, setValues] = useState({
+    name: '',
+    email: '',
+    password: '',
+  });
 
-export default Regiter;
+  const handleInput = (event) => {
+    setValues({
+      ...form,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    props.registerResquest(form);
+    props.history.push('/');
+  }
+
+  return (
+    <section className='register'>
+      <section className='register__container'>
+        <h2>Regístrate</h2>
+        <form className='register__container--form' onSubmit={handleSubmit}>
+          <input
+            name='name'
+            className='input'
+            type='text'
+            placeholder='Nombre'
+            onChange={handleInput}
+          />
+          <input
+            name='email'
+            className='input'
+            type='text'
+            placeholder='Correo'
+            onChange={handleInput}
+          />
+          <input
+            name='password'
+            className='input'
+            type='password'
+            placeholder='Contraseña'
+            onChange={handleInput}
+          />
+          <button className='button' type='submit'>Registrarme</button>
+        </form>
+        <section className='register__container--social-media'>
+          <p>Registrate con</p>
+          <div>
+            <img src={facebookIcon} />
+            <img src={twitterIcon} />
+            <img src={goolgeIcon} />
+          </div>
+        </section>
+        <Link to='/login'>
+        Iniciar sesión
+        </Link>
+      </section>
+    </section>
+  );
+};
+
+const mapDispatchToProps = {
+  registerResquest,
+};
+
+export default connect(null, mapDispatchToProps)(Regiter);

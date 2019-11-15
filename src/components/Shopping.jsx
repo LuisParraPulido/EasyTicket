@@ -6,25 +6,25 @@ const Shopping = () => (
     <div className='main_checkbox'>
       <h2>¿Cómo deseas pagar?</h2>
       <ul>
-        <label className='container'>
+        <label className='container' >
           Tarjeta de crédito
           <input type='checkbox' />
-          <span className='checkmark'></span>
+          <span className='checkmark' />
         </label>
         <label className='container'>
           Tarjeta de débito
           <input type='checkbox' />
-          <span className='checkmark'></span>
+          <span className='checkmark' />
         </label>
         <label className='container'>
           Bitcoin
           <input type='checkbox' />
-          <span className='checkmark'></span>
+          <span className='checkmark' />
         </label>
         <label className='container'>
           Efecty
           <input type='checkbox' />
-          <span className='checkmark'></span>
+          <span className='checkmark' />
         </label>
       </ul>
     </div>
