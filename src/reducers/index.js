@@ -16,6 +16,16 @@ const reducer = (state, action) => {
         ...state,
         user: action.payload,
       };
+    case 'SEARCH_REQUEST':
+      return {
+        ...state,
+        search: action.payload,
+      };
+    case 'SET_TICKET':
+      return {
+        ...state,
+        tickets: [...state.tickets, action.payload],
+      };
     default:
       return state;
   }

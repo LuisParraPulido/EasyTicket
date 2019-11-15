@@ -1,0 +1,24 @@
+.selling {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  border-radius: 30px;
+}
+
+.selling h3 {
+  margin: 0;  
+}
+  
+.selling__notifications {
+  display: flex;
+  flex-direction: row;
+}
+  
+.selling__notifications p {
+  border-bottom: 2px solid grey;
+  padding: 0px 50px;
+}
+  
+.border {
+  border-right: 2px solid grey;
+}

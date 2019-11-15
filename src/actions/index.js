@@ -12,3 +12,13 @@ export const registerResquest = (payload) => ({
   type: 'REGISTER_REQUEST',
   payload,
 });
+
+export const searchRequest = (payload) => ({
+  type: 'SEARCH_REQUEST',
+  payload,
+});
+
+export const setTicket = (payload) => ({
+  type: 'SET_TICKET',
+  payload,
+});

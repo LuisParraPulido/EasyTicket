@@ -1,0 +1,21 @@
+
+.code__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  border-radius: 30px;
+}
+
+.code__QR {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#text {
+  margin: 15px;
+}
+  
+ 
+

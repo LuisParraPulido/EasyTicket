@@ -1,8 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { setTicket } from '../actions';
 import '../assets/styles/components/TicketItem.scss';
 
-const TicketItem = ({ departing, returning, price }) => {
+const TicketItem = (props) => {
+  const { departing, returning, price } = props;
+  const handleSetTicket = () => {
+    props.setTicket({
+      departing, returning, price,
+    });
+    props.history.push('/buyTickets');
+  };
+
   return (
     <section className='ticket'>
       <div className='ticket__data'>
@@ -70,7 +81,7 @@ const TicketItem = ({ departing, returning, price }) => {
           $
           {price}
         </p>
-        <button type='button'>Comprar</button>
+        <button type='button' onClick={handleSetTicket}>Comprar</button>
       </div>
     </section>
   );
@@ -80,4 +91,8 @@ TicketItem.propTypes = {
   price: PropTypes.number,
 };
 
-export default TicketItem;
+const mapDispatchToProps = {
+  setTicket,
+};
+
+export default connect(null, mapDispatchToProps)(withRouter(TicketItem));
