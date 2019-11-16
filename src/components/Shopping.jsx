@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { createUserTicket } from '../actions';
 import '../assets/styles/components/Shopping.scss';
 
 const Shopping = (props) => {
+  const { userTicket } = props;
   const [form, setValues] = useState({
     name: '',
     lastname: '',
@@ -20,9 +23,12 @@ const Shopping = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(form);
+    props.createUserTicket({
+      ...userTicket,
+      'user': form,
+    });
+    props.history.push('/user-profile');
   };
-
   return (
     <section className='main'>
       <div className='main_checkbox'>
@@ -117,9 +123,13 @@ const Shopping = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    tickets: state.tickets.ticket,
+    userTicket: state.userTicket,
   };
 };
 
-export default connect(mapStateToProps, null)(Shopping);
+const mapDispatchToProps = {
+  createUserTicket,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Shopping));
 

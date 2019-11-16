@@ -6,12 +6,13 @@ import { setTicket } from '../actions';
 import '../assets/styles/components/TicketItem.scss';
 
 const TicketItem = (props) => {
-  const { departing, returning, price } = props;
+  const { departing, returning, price, user } = props;
+  const hasUser = Object.keys(user).length > 0;
   const handleSetTicket = () => {
     props.setTicket({
-      departing, returning, price,
+      departing, returning, price, user,
     });
-    props.history.push('/buyTickets');
+    props.history.push(`${hasUser ? '/ticket-profile' : '/buyTickets'}`);
   };
 
   return (
@@ -81,7 +82,10 @@ const TicketItem = (props) => {
           $
           {price}
         </p>
-        <button type='button' onClick={handleSetTicket}>Comprar</button>
+
+        {hasUser ?
+          <button type='button' onClick={handleSetTicket}>Información</button> :
+          <button type='button' onClick={handleSetTicket}>Comprar</button>}
       </div>
     </section>
   );

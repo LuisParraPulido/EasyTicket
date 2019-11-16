@@ -4,8 +4,9 @@ import TicketItem from '../components/TicketItem';
 import '../assets/styles/components/UserProfile.scss';
 
 const UserProfile = (props) => {
-  const { userTickets } = props;
-  const hasTickets = userTickets.length > 0;
+  const { userTicket } = props;
+
+  const hasTickets = Object.keys(userTicket).length > 0;
   return (
     <>
       <section className='user__container'>
@@ -16,7 +17,7 @@ const UserProfile = (props) => {
         </div>
       </section>
       {hasTickets ?
-        <TicketItem /> :
+        <TicketItem key={userTicket.id} {...userTicket} /> :
         <h2>No tienes tickets para visualizar</h2>}
     </>
   );
@@ -24,7 +25,7 @@ const UserProfile = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    userTickets: state.userTickets,
+    userTicket: state.userTicket,
   };
 };
 

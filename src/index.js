@@ -8,7 +8,7 @@ import App from './routes/App';
 const initialState = {
   'user': {},
   'search': {},
-  'userTickets': [],
+  'userTicket': {},
   'tickets': [
     {
       'id': 1,

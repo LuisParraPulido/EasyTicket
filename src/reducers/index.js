@@ -24,7 +24,12 @@ const reducer = (state, action) => {
     case 'SET_TICKET':
       return {
         ...state,
-        tickets: [...state.tickets, action.payload],
+        userTicket: action.payload,
+      };
+    case 'CREATE_USER_TICKET':
+      return {
+        ...state,
+        userTicket: action.payload,
       };
     default:
       return state;
