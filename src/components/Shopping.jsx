@@ -100,8 +100,8 @@ const Shopping = (props) => {
               <div className='main_result-items'>
                 <h2>Datos de la compra:</h2>
                 <h3>Fecha:</h3>
-                <p>Ida: sábado 20 diciembre 2019, 07:00hs</p>
-                <p>Vuelta: lunes 22 diciembre 2019, 13:00hs</p>
+                <p>{`IDA: ${userTicket.departing.date}, ${userTicket.departing.hour}`}</p>
+                <p>{`VUELTA: ${userTicket.returning.date}, ${userTicket.returning.hour}`}</p>
               </div>
             </div>
 
@@ -110,7 +110,7 @@ const Shopping = (props) => {
                 <input type='checkbox' />
                 leí y acepto las condiciones de compra y políticas de privacidad de EasyTicket
               </p>
-              <h2>Total: $1.600.000</h2>
+              <h2>{`TOTAL: $${userTicket.price}`}</h2>
             </div>
             <button className='button' type='submit'>Comprar</button>
           </form>

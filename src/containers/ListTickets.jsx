@@ -1,11 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Tabs, TabLink, TabContent } from 'react-tabs-redux';
 import ListItems from '../components/ListItems';
 import TicketItem from '../components/TicketItem';
 
-const ListTickets = ({ search }) => {
+const ListTickets = ({ search, resoldTickets }) => {
   const { from, to, departure, returningDate } = search;
-
+  const hasResoldTickets = resoldTickets.length > 0;
   const tickets = [];
 
   for (let i = 0; i < 5; i++) {
@@ -46,9 +47,22 @@ const ListTickets = ({ search }) => {
 
   return (
     <>
-      <ListItems>
-        {tickets.map((item) => <TicketItem key={item.id} {...item} />)}
-      </ListItems>
+      <Tabs>
+        <TabLink to='tab1'>Tickets</TabLink>
+        <TabLink to='tab2'>Revendidos</TabLink>
+
+        <TabContent for='tab1'>
+          <ListItems>
+            {tickets.map((item) => <TicketItem key={item.id} {...item} />)}
+          </ListItems>
+        </TabContent>
+        <TabContent for='tab2'>
+          <ListItems>
+            {hasResoldTickets ? resoldTickets.map((item) => <TicketItem key={item.id} {...item} />) :
+              <h2>No hay tickets Revendidos</h2>}
+          </ListItems>
+        </TabContent>
+      </Tabs>
     </>
   );
 };
@@ -56,6 +70,7 @@ const ListTickets = ({ search }) => {
 const mapStateToProps = (state) => {
   return {
     search: state.search,
+    resoldTickets: state.resoldTickets,
   };
 };
 

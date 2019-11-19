@@ -9,6 +9,7 @@ const initialState = {
   'user': {},
   'search': {},
   'userTicket': {},
+  'resoldTickets': [],
   'tickets': [
     {
       'id': 1,

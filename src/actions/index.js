@@ -27,3 +27,8 @@ export const createUserTicket = (payload) => ({
   type: 'CREATE_USER_TICKET',
   payload,
 });
+
+export const sellTicket = (payload) => ({
+  type: 'SELL_TICKET',
+  payload,
+});

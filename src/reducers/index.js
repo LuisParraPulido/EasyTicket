@@ -31,6 +31,12 @@ const reducer = (state, action) => {
         ...state,
         userTicket: action.payload,
       };
+    case 'SELL_TICKET':
+      return {
+        ...state,
+        resoldTickets: [...state.resoldTickets, action.payload],
+        userTicket: {},
+      };
     default:
       return state;
   }

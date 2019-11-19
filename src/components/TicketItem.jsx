@@ -1,19 +1,44 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { setTicket } from '../actions';
+// import PropTypes from 'prop-types';
+import { setTicket, sellTicket } from '../actions';
 import '../assets/styles/components/TicketItem.scss';
 
 const TicketItem = (props) => {
-  const { departing, returning, price, user } = props;
-  const hasUser = Object.keys(user).length > 0;
+  const { id, departing, returning, price, user } = props;
+  const userTicket = props;
+  let buttonTitle = '';
+  let buttonFunction;
+  let buttonPath;
+
   const handleSetTicket = () => {
     props.setTicket({
-      departing, returning, price, user,
+      id, departing, returning, price, user,
     });
-    props.history.push(`${hasUser ? '/ticket-profile' : '/buyTickets'}`);
+    props.history.push(`${buttonPath}`);
   };
+
+  const handleSellTicket = () => {
+    props.sellTicket({
+      id, departing, returning, price, user,
+    });
+    props.history.push(`${buttonPath}`);
+  };
+
+  if (window.location.pathname === '/listTickets') {
+    buttonTitle = 'Comprar';
+    buttonFunction = handleSetTicket;
+    buttonPath = '/buyTickets';
+  } else if (window.location.pathname === '/user-profile') {
+    buttonTitle = 'Información';
+    buttonFunction = handleSetTicket;
+    buttonPath = '/ticket-profile';
+  } else if (window.location.pathname === '/ticket-profile') {
+    buttonTitle = 'Revender';
+    buttonFunction = handleSellTicket;
+    buttonPath = '/user-profile';
+  }
 
   return (
     <section className='ticket'>
@@ -82,21 +107,21 @@ const TicketItem = (props) => {
           $
           {price}
         </p>
-
-        {hasUser ?
-          <button type='button' onClick={handleSetTicket}>Información</button> :
-          <button type='button' onClick={handleSetTicket}>Comprar</button>}
+        <button type='button' onClick={buttonFunction}>{buttonTitle}</button>
       </div>
     </section>
   );
 };
 
-TicketItem.propTypes = {
-  price: PropTypes.number,
+const mapStateToProps = (state) => {
+  return {
+    userTicket: state.userTicket,
+  };
 };
 
 const mapDispatchToProps = {
   setTicket,
+  sellTicket,
 };
 
-export default connect(null, mapDispatchToProps)(withRouter(TicketItem));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(TicketItem));

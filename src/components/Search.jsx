@@ -8,8 +8,8 @@ const Search = (props) => {
   const [form, setValues] = useState({
     from: '',
     to: '',
-    departure: new Date(),
-    returningDate: new Date(),
+    departure: '',
+    returningDate: '',
   });
 
   const handleInput = (event) => {

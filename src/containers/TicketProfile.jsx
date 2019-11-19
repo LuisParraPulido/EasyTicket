@@ -1,12 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Tabs, TabLink, TabContent } from 'react-tabs-redux';
 import FlightStatus from '../components/FlightStatus';
 import QrCode from '../components/QrCode';
-import SellTicket from '../components/SellTicket';
+import TicketItem from '../components/TicketItem';
 import '../assets/styles/components/TicketProfile.scss';
 
-const TicketProfile = () => {
-
+const TicketProfile = (props) => {
+  const { userTicket } = props;
   return (
     <section className='selling'>
       <h3>Mi tiquete</h3>
@@ -17,10 +18,16 @@ const TicketProfile = () => {
 
         <TabContent for='tab1'><FlightStatus /></TabContent>
         <TabContent for='tab2'><QrCode /></TabContent>
-        <TabContent for='tab3'><SellTicket /></TabContent>
+        <TabContent for='tab3'><TicketItem key={userTicket.id} {...userTicket} /></TabContent>
       </Tabs>
     </section>
   );
 };
 
-export default TicketProfile;
+const mapStateToProps = (state) => {
+  return {
+    userTicket: state.userTicket,
+  };
+};
+
+export default connect(mapStateToProps, null)(TicketProfile);
