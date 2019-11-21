@@ -11,7 +11,7 @@ const Shopping = (props) => {
     lastname: '',
     country: '',
     document: '',
-    birthday: new Date(),
+    birthday: '',
   });
 
   const handleInput = (event) => {
