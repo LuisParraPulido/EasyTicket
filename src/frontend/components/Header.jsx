@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import gravatar from '../utils/gravatar';
-import logoutRequest from '../actions';
+import { logoutRequest } from '../actions';
 
 import '../assets/styles/components/Header.scss';
 import logo from '../assets/static/icono-home.png';

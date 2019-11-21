@@ -48,7 +48,8 @@ const Login = (props) => {
           <button className='button' type='submit'>Iniciar sesión</button>
           <div className='login__container--remember-me'>
             <label>
-              <input type='checkbox' id='cbox1' value='first_checkbox' />Recuérdame 
+              <input type='checkbox' id='cbox1' value='first_checkbox' />
+              Recuérdame
             </label>
             <a href='/'>Olvidé mi contraseña</a>
           </div>
@@ -56,9 +57,9 @@ const Login = (props) => {
         <section className='login__container--social-media'>
           <p>Inicia sesión con</p>
           <div>
-            <img src={facebookIcon} />
-            <img src={twitterIcon} />
-            <img src={goolgeIcon} />
+            <img src={facebookIcon} alt='facebook-icon' />
+            <img src={twitterIcon} alt='twitter-icon' />
+            <img src={goolgeIcon} alt='google-icon' />
           </div>
         </section>
         <p className='login__container--register'>No tienes ninguna cuenta </p>

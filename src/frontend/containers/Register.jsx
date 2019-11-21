@@ -26,7 +26,7 @@ const Regiter = (props) => {
     event.preventDefault();
     props.registerResquest(form);
     props.history.push('/');
-  }
+  };
 
   return (
     <section className='register'>
@@ -59,9 +59,9 @@ const Regiter = (props) => {
         <section className='register__container--social-media'>
           <p>Registrate con</p>
           <div>
-            <img src={facebookIcon} />
-            <img src={twitterIcon} />
-            <img src={goolgeIcon} />
+            <img src={facebookIcon} alt='facebook-icon' />
+            <img src={twitterIcon} alt='twitter-icon' />
+            <img src={goolgeIcon} alt='google-icon' />
           </div>
         </section>
         <Link to='/login'>

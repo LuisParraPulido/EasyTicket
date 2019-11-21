@@ -58,8 +58,7 @@ const ListTickets = ({ search, resoldTickets }) => {
         </TabContent>
         <TabContent for='tab2'>
           <ListItems>
-            {hasResoldTickets ? resoldTickets.map((item) => <TicketItem key={item.id} {...item} />) :
-              <h2>No hay tickets Revendidos</h2>}
+            {hasResoldTickets ? resoldTickets.map((item) => <TicketItem key={item.id} {...item} />) : <h2>No hay tickets Revendidos</h2>}
           </ListItems>
         </TabContent>
       </Tabs>

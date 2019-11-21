@@ -34,7 +34,7 @@ const Shopping = (props) => {
       <div className='main_checkbox'>
         <h2>¿Cómo deseas pagar?</h2>
         <ul>
-          <label className='container' >
+          <label className='container'>
             Tarjeta de crédito
             <input type='checkbox' />
             <span className='checkmark' />
@@ -132,4 +132,3 @@ const mapDispatchToProps = {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Shopping));
-

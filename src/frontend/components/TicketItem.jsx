@@ -7,7 +7,6 @@ import '../assets/styles/components/TicketItem.scss';
 
 const TicketItem = (props) => {
   const { id, departing, returning, price, user } = props;
-  const userTicket = props;
   let buttonTitle = '';
   let buttonFunction;
   let buttonPath;
