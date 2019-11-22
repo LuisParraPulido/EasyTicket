@@ -1,31 +1,33 @@
-const passport = require('passport');
-const { BasicStrategy } = require('passport-http');
-const boom = require('@hapi/boom');
-const axios = require('axios');
-const { config } = require('../../../config/index');
+import passport from 'passport';
+import { BasicStrategy } from 'passport-http';
+import boom from '@hapi/boom';
+import dotenv from 'dotenv';
+import axios from 'axios';
+
+dotenv.config();
 
 passport.use(
-  new BasicStrategy(async function(email, password, cb) {
-    try{
+  new BasicStrategy(async (email, password, cb) => {
+    try {
       const { data, status } = await axios({
-        url: `${config.apiUrl}/api/auth/sign-in`,
+        url: `${process.env.API_URL}/api/auth/sign-in`,
         method: 'post',
         auth: {
           password,
-          username: email
+          username: email,
         },
         data: {
-          apiKeyToken: config.apiKeyToken
-        }
+          apiKeyToken: process.env.API_KEY_TOKEN,
+        },
       });
 
-      if(!data || status !== 200) {
+      if (!data || status !== 200) {
         return cb(boom.unauthorized(), false);
       }
 
       return cb(null, data);
-    } catch(error) {
-      cb(error)
+    } catch (error) {
+      return cb(error);
     }
-  })
-)
+  }),
+);
