@@ -1,0 +1,15 @@
+.explore {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 50px;
+  }
+  
+  .explore__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  .explore__item--img {
+    height: 160px;
+  }

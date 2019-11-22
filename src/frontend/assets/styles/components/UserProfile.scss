@@ -1,0 +1,25 @@
+
+.user__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  border-radius: 30px;
+}
+
+.user__container h3 {
+  margin: 0;  
+}
+
+.user__notifications {
+  display: flex;
+  flex-direction: row;
+}
+
+.user__notifications p {
+  border-bottom: 2px solid grey;
+  padding: 0px 50px;
+}
+
+.border {
+  border-right: 2px solid grey;
+}
