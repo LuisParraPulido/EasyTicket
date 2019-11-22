@@ -1,6 +1,10 @@
 {
   "initialState": {
-    "userTickets": [],
+    "user": {},
+    "notification": [],
+    "search": {},
+    "userTicket": {},
+    "resoldTickets": [],
     "tickets": [ 
       {
         "id":1,

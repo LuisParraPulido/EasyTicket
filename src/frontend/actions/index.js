@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export const loginRequest = (payload) => ({
   type: 'LOGIN_REQUEST',
   payload,
@@ -5,6 +7,11 @@ export const loginRequest = (payload) => ({
 
 export const logoutRequest = (payload) => ({
   type: 'LOGOUT_REQUEST',
+  payload,
+});
+
+export const setError = (payload) => ({
+  type: 'SET_ERROR',
   payload,
 });
 
@@ -32,3 +39,14 @@ export const sellTicket = (payload) => ({
   type: 'SELL_TICKET',
   payload,
 });
+
+export const registerUser = (payload, redirecUrl) => {
+  return (dispatch) => {
+    axios.post('/auth/sign-up', payload)
+      .then(({ data }) => dispatch(registerResquest(data)))
+      .then(() => {
+        window.location.href = redirecUrl;
+      })
+      .catch((err) => dispatch(setError(err)));
+  };
+};

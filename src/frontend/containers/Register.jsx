@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { registerResquest } from '../actions';
+import { registerUser } from '../actions';
 
 import '../assets/styles/components/Register.scss';
 import goolgeIcon from '../assets/static/google-icon.png';
@@ -24,8 +24,7 @@ const Regiter = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.registerResquest(form);
-    props.history.push('/');
+    props.registerUser(form, '/login');
   };
 
   return (
@@ -39,6 +38,7 @@ const Regiter = (props) => {
             type='text'
             placeholder='Nombre'
             onChange={handleInput}
+            required
           />
           <input
             name='email'
@@ -46,6 +46,7 @@ const Regiter = (props) => {
             type='text'
             placeholder='Correo'
             onChange={handleInput}
+            required
           />
           <input
             name='password'
@@ -53,6 +54,7 @@ const Regiter = (props) => {
             type='password'
             placeholder='Contraseña'
             onChange={handleInput}
+            required
           />
           <button className='button' type='submit'>Registrarme</button>
         </form>
@@ -73,7 +75,7 @@ const Regiter = (props) => {
 };
 
 const mapDispatchToProps = {
-  registerResquest,
+  registerUser,
 };
 
 export default connect(null, mapDispatchToProps)(Regiter);

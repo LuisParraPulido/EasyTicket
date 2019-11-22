@@ -9,11 +9,11 @@ import reducer from './reducers/index';
 import App from './routes/App';
 
 if (typeof window !== 'undefined') {
-  let composeEnhacers;
-  if (process.env.NODE_ENV === 'production') composeEnhacers = compose;
-  else composeEnhacers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+  let composeEnhancers;
+  if (process.env.NODE_ENV === 'production') composeEnhancers = compose;
+  else composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
   const preloadedState = window.__PRELOADED_STATE__;
-  const store = createStore(reducer, preloadedState, composeEnhacers(applyMiddleware(thunk)));
+  const store = createStore(reducer, preloadedState, composeEnhancers(applyMiddleware(thunk)));
   const history = createBrowserHistory();
 
   hydrate(
