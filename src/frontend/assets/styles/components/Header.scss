@@ -1,9 +1,11 @@
 .header__icons {
+  background-color: #78CAD3;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center; 
   padding: 0px 40px;
+  height: 100px;
 }
 
 .header__icons--img {
@@ -11,7 +13,7 @@
 }
 
 .header__icons--menu {
-  margin-right: 30px;      
+  margin-right: 10px;      
 }
 
 .header__icons--menu ul {
@@ -26,7 +28,11 @@
 
 .header__menu--profile {
   margin-right: 8px;
-  width: 40px;  
+  height: 40px; 
+}
+
+.header__menu--profile img {
+  width: 50px;
 }
 
 .header__icons--menu:hover ul, ul:hover {

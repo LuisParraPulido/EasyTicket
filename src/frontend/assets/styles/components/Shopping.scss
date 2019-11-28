@@ -1,7 +1,7 @@
-
 /* ------------form--------- */
 
-.main {
+
+.main__ {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -13,11 +13,12 @@
   border-radius: 30px;
   width: 90%;
   margin-top: 20px;
+  width: 70%;
+  padding: 0px 7%;
 }
 .main_checkbox h2 {
   text-align: center;
 }
-
 .main_checkbox ul {
   list-style: none;
 }
@@ -95,6 +96,11 @@
   border-radius: 30px;
   width: 90%;
   margin: 20px;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
 }
 
 .main_form-container {
@@ -127,7 +133,7 @@
 .main_result {
   border: 1px solid black;
   border-radius: 30px;
-  width: 90%;
+  // width: 90%;
 }
 
 .main_result-items {
@@ -147,9 +153,11 @@
 }
 
 .button {
-  width: 80%;
+  width: 100%;
   height: 30px;
-  margin: 0px 20px 20px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-family: 'Muli', sans-serif;
   background-color: #120390;
   border-radius: 4px;
   border: 1px solid #120390 ;

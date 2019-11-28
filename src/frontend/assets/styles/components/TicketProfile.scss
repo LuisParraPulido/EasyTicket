@@ -6,7 +6,7 @@
 }
 
 .selling h3 {
-  margin: 0;  
+  margin: 20px 0px;  
 }
   
 .selling__notifications {
@@ -18,7 +18,25 @@
   border-bottom: 2px solid grey;
   padding: 0px 50px;
 }
+.Tabs {
+  border-top: 0px;
+}
   
 .border {
   border-right: 2px solid grey;
+}
+.Tabs__container {
+  padding: 10px;
+}
+.Tabs__container--item {
+  border: 0px ;
+  width: 200px;
+  border-radius: 10px;
+  margin: 10px;
+  background-color: #78CAD3;
+  font-size: 16px;
+  font-family: 'Muli', sans-serif;
+  padding: 5px;
+  letter-spacing: 1px;
+  outline: none;
 }

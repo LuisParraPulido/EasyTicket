@@ -10,17 +10,17 @@ import TicketProfile from '../containers/TicketProfile';
 import NotFound from '../containers/NotFound';
 import Layout from '../components/Layout';
 
-const App = () => (
+const App = ({ isLogged }) => (
   <BrowserRouter>
     <Layout>
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/listTickets' component={ListTickets} />
-        <Route exact path='/buyTickets' component={BuyTicket} />
+        <Route exact path='/buyTickets' component={isLogged ? BuyTicket : Login} />
         <Route exact path='/register' component={Register} />
         <Route exact path='/login' component={Login} />
-        <Route exact path='/user-profile' component={UserProfile} />
-        <Route exact path='/ticket-profile' component={TicketProfile} />
+        <Route exact path='/user-profile' component={isLogged ? UserProfile : Login} />
+        <Route exact path='/ticket-profile' component={isLogged ? TicketProfile : Login} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
